@@ -1,0 +1,20 @@
+name: 'Pocket Retrieve Action'
+description: 'Retrieve items from the pocket API'
+inputs:
+  consumerKey:
+    description: 'The consumer key from Pockets developer portal'
+    required: true
+  accessToken:
+    description: 'The access token retrieved upon authorization'
+    required: true
+  fileName:
+    description: 'The output filename for the retrieved articles'
+    required: false
+    default: 'articles.json'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.consumerKey }}
+    - ${{ inputs.accessToken }}
+    - ${{ inputs.fileName }}
