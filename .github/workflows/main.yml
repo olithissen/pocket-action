@@ -11,8 +11,3 @@ jobs:
         with:
           consumerKey: ${{ secrets.CONSUMER_KEY }}
           accessToken: ${{ secrets.ACCESS_TOKEN }}
-      - name: Archive results 🗄
-        uses: actions/upload-artifact@v2
-        with:
-          name: articles
-          path: articles.json
